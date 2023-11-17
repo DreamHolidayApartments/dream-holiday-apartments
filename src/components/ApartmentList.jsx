@@ -1,4 +1,7 @@
+import { useParams } from "react-router-dom";
+
 function ApartmentList() {
+  const {cityId} = useParams();
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img
