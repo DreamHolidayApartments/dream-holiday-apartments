@@ -1,4 +1,5 @@
 import axios from "axios";
+import "../styles/HomePage.css"
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -50,17 +51,15 @@ function HomePage() {
 
 
   return (
-    <div>
-      <h1>Home Page</h1>
-
-      <label>
-        Select Countries
+    <div className="HomePage">
+     <div className="homepage-ele">
+      <label className="countryLabel">
         <select
           className="custom-select"
           id="inputGroupSelect01"
           onChange={handleSelectCountry}
         >
-          <option>Choose Country</option>
+          <option>Select Country</option>
           {countries &&
             countries.map((country) => {
               return <option value={country.id} key={country.id}>{country.name}</option>;
@@ -68,14 +67,13 @@ function HomePage() {
         </select>
       </label>
 
-      <label>
-        Select Cities
+      <label className="cityLabel">
         <select
           className="custom-select"
           id="inputGroupSelect02"
           onChange={(e)=>{setSelectedCity(e.target.value)}}
         >
-          <option>Choose City</option>
+          <option>Select City</option>
           {filteredCities &&
             filteredCities.map((city) => {
               return <option value={city.id} key={city.id}>{city.name}</option>;
@@ -83,9 +81,9 @@ function HomePage() {
         </select>
       </label>
       {
-        selectedCity && (<Link to = {`/apartmentList/${selectedCity}`}>Submit</Link>)
+        selectedCity && (<Link id="btnSubmit1" to = {`/apartmentList/${selectedCity}`}>Submit</Link>)
       }
-      
+      </div>
 
     </div>
   );
