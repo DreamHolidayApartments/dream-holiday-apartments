@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import "../styles/ApartmentList.css";
 
 function ApartmentList() {
   const url = import.meta.env.VITE_API_URL;
@@ -33,8 +34,7 @@ function ApartmentList() {
   }, [allApartments]);
 
   return (
-    <>
-      (
+    <div className="list-container">
       {apartmentsInCity &&
         apartmentsInCity.map((apartment) => {
           return (
@@ -47,24 +47,17 @@ function ApartmentList() {
               <div className="card-body">
                 <div>
                   <h5 className="card-title">{apartment.title}</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusamus, quae blanditiis tempora
-                  </p>
+                  <p>{apartment.description}</p>
                 </div>
-
                 <p className="card-text">
                   {apartment.pricePerNight} € per Night
                 </p>
-                <a href="#" className="btn btn-primary">
-                  Check it out
-                </a>
+                <Link className="btn btn-primary">Check it out</Link>
               </div>
             </div>
           );
         })}
-      )
-    </>
+    </div>
   );
 }
 
