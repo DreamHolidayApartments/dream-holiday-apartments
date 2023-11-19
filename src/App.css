@@ -3,3 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.navBarStyle{
+  height: 4rem;
+  background-color: #7C9D96;
+  color: #F4F2DE;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav1 ul{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.nav1 ul li a{
+  text-decoration: none;
+  color: #F4F2DE;
+}
+
+.nav1 ul li{
+  margin: 20px;
+}
+
+.nav2 button{
+  margin: 20px;
+}
+
