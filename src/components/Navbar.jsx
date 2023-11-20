@@ -4,12 +4,13 @@ import { useState } from "react"
 import Modaladd from "./Modaladd";
 
 
-function Navbar() {
+function Navbar({ fetchedCountries, fetchedCities }) {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  console.log(fetchedCountries)
   return (
   <nav className="navBarStyle">
     <div className="nav1">
@@ -32,7 +33,7 @@ function Navbar() {
     </div>
     <div className="nav2">
     <button className="btn btn-outline-light" onClick={handleShow}>Add Apartment</button>
-    <Modaladd show= {show} onHide ={handleClose}/>
+    <Modaladd show= {show} setShow = {setShow} onHide ={handleClose} cities={fetchedCities} countries={fetchedCountries}/>
     </div>
   </nav>
   )

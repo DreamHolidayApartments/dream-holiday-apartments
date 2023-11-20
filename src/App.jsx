@@ -34,19 +34,21 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== "/" && <Navbar />}
+
+      {location.pathname !== "/" && cities && countries && <Navbar fetchedCountries={countries} fetchedCities={cities} />}
 
       <Routes>
-        (cities && countries &&{" "}
+        (cities && countries && 
         <Route
           path="/"
           element={
             <HomePage fetchedCountries={countries} fetchedCities={cities} />
           }
         />
-        )
         <Route path="/apartmentList/:cityId" element={<ApartmentList />} />
+        )
       </Routes>
+        
     </div>
   );
 }

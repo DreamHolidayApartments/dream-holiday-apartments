@@ -1,10 +1,8 @@
-import axios from "axios";
 import "../styles/HomePage.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function HomePage({ fetchedCountries, fetchedCities }) {
-  let url = import.meta.env.VITE_API_URL;
 
   const [filteredCities, setFilteredCities] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
