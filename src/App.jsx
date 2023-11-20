@@ -7,10 +7,8 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="App">
-    {
-      location.pathname !== '/' &&  <Navbar/>
-    }
-    
+      {location.pathname !== "/" && <Navbar />}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/apartmentList/:cityId" element={<ApartmentList />} />
