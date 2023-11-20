@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../styles/ApartmentList.css";
+import placeholderImg from "../assets/placeholder-img.png";
 
 function ApartmentList() {
   const url = import.meta.env.VITE_API_URL;
@@ -41,14 +42,20 @@ function ApartmentList() {
             <div className="card" style={{ width: "18rem" }} key={apartment.id}>
               <img
                 className="card-img-top"
-                src="https://cdn.britannica.com/06/171306-050-C88DD752/Aurora-borealis-peninsula-Snaefellsnes-Iceland-March-2013.jpg"
-                alt="Card image cap"
+                src={
+                  apartment.pictureURL
+                    ? `${apartment.pictureURL}`
+                    : placeholderImg
+                }
+                alt="Photo of Apartment"
               />
               <div className="card-body">
-                <div>
+                <div className="card-head">
                   <h5 className="card-title">{apartment.title}</h5>
-                  <p>{apartment.description}</p>
+                  <p> &#9733;{apartment.rating} </p>
                 </div>
+                <p id="beds">&#183; {apartment.numOfGuest} beds &#183;</p>
+                <p>{apartment.description}</p>
                 <p className="card-text">
                   {apartment.pricePerNight} € per Night
                 </p>

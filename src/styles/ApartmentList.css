@@ -5,6 +5,24 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: space-evenly; */
   gap: 5rem;
+}
+
+.card-img-top {
+  max-height: 12rem;
+  object-fit: cover;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+#beds {
+  color: grey;
+}
+
+.card-body p {
+  margin-bottom: 0.5rem;
 }

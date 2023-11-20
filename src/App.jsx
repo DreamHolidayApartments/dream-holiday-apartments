@@ -5,7 +5,6 @@ import ApartmentList from "./pages/ApartmentList";
 import Navbar from "./components/Navbar";
 
 function App() {
-
   const location = useLocation();
 
   return (
