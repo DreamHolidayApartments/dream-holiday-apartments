@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import ApartmentList from "./pages/ApartmentList";
 import Navbar from "./components/Navbar";
+import ApartmentDetails from "./pages/ApartmentDetails";
 import axios from "axios";
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
           }
         />
         )
-        <Route path="/apartmentList/:cityId" element={<ApartmentList />} />
+        <Route path="/apartment-list/:cityId" element={<ApartmentList />} />
+        <Route path="/cityName/:apartmentId" element={<ApartmentDetails />} />
       </Routes>
     </div>
   );

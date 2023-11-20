@@ -78,7 +78,12 @@ function ApartmentList() {
                   <p className="card-text">
                     {apartment.pricePerNight} € per Night
                   </p>
-                  <Link className="btn btn-primary">Check it out</Link>
+                  <Link
+                    className="btn btn-primary"
+                    to={`/cityname/${apartment.id}`}
+                  >
+                    Check it out
+                  </Link>
                 </div>
               </div>
             );
