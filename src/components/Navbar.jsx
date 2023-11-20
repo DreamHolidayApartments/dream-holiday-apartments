@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom"
 import img1 from "../assets/logo.png"
+import { useState } from "react"
+import Modaladd from "./Modaladd";
+
 
 function Navbar() {
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
   <nav className="navBarStyle">
     <div className="nav1">
@@ -23,7 +31,8 @@ function Navbar() {
       </ul>
     </div>
     <div className="nav2">
-    <button class="btn btn-outline-light" type="submit">Add Apartment</button>
+    <button className="btn btn-outline-light" onClick={handleShow}>Add Apartment</button>
+    <Modaladd show= {show} onHide ={handleClose}/>
     </div>
   </nav>
   )
