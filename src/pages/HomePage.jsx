@@ -58,7 +58,7 @@ function HomePage({ fetchedCountries, fetchedCities }) {
           </select>
         </label>
         {selectedCity && (
-          <Link id="btnSubmit1" to={`/apartmentList/${selectedCity}`}>
+          <Link id="btnSubmit1" to={`/apartment-list/${selectedCity}`}>
             Submit
           </Link>
         )}

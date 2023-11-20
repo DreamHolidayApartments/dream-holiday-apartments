@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import ApartmentList from "./pages/ApartmentList";
 import Navbar from "./components/Navbar";
+import ApartmentDetails from "./pages/ApartmentDetails";
 import axios from "axios";
 
 function App() {
-  const location = useLocation();
   let url = import.meta.env.VITE_API_URL;
+  const location = useLocation();
   const [countries, setCountries] = useState(null);
   const [cities, setCities] = useState(null);
 
@@ -45,8 +46,9 @@ function App() {
             <HomePage fetchedCountries={countries} fetchedCities={cities} />
           }
         />
-        <Route path="/apartmentList/:cityId" element={<ApartmentList />} />
         )
+        <Route path="/apartment-list/:cityId" element={<ApartmentList />} />
+        <Route path="/cityName/:apartmentId" element={<ApartmentDetails />} />
       </Routes>
         
     </div>
