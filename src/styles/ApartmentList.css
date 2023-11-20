@@ -1,5 +1,8 @@
+#ApartmentList {
+  position: relative;
+}
+
 .list-container {
-  border: 1px solid red;
   margin: 10rem auto;
   width: 80vw;
 
@@ -21,8 +24,35 @@
 
 #beds {
   color: grey;
+  height: 1rem;
 }
 
 .card-body p {
   margin-bottom: 0.5rem;
+  position: relative;
+  height: 8vh;
+}
+
+#filter-btn {
+  background-color: #e8b384;
+  position: absolute;
+  top: -8rem;
+  right: 2rem;
+  border-radius: 15%;
+  padding: 0.1rem 0.3rem;
+}
+
+.btn-primary {
+  background-color: #e8b384;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #d2a177;
+  color: black;
 }

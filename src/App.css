@@ -1,36 +1,39 @@
+/*-------COLORS-------*/
+/* button: #E8B384
+button:hover: #D2A177  */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.navBarStyle{
+.navBarStyle {
   height: 4rem;
-  background-color: #7C9D96;
-  color: #F4F2DE;
+  background-color: #7c9d96;
+  color: #f4f2de;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav1 ul{
+.nav1 ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   align-items: center;
 }
 
-.nav1 ul li a{
+.nav1 ul li a {
   text-decoration: none;
-  color: #F4F2DE;
+  color: #f4f2de;
 }
 
-.nav1 ul li{
+.nav1 ul li {
   margin: 20px;
 }
 
-.nav2 button{
+.nav2 button {
   margin: 20px;
 }
-

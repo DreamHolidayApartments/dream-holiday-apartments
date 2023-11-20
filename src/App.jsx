@@ -7,8 +7,8 @@ import Navbar from "./components/Navbar";
 import axios from "axios";
 
 function App() {
-  const location = useLocation();
   let url = import.meta.env.VITE_API_URL;
+  const location = useLocation();
   const [countries, setCountries] = useState(null);
   const [cities, setCities] = useState(null);
 
