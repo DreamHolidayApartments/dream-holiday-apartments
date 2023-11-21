@@ -27,9 +27,6 @@ function App() {
   };
 
 
-
-
-
   useEffect(() => {
     fetchData("countries", setCountries);
     fetchData("cities", setCities);

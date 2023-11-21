@@ -5,26 +5,12 @@ import "../styles/ApartmentList.css";
 import placeholderImg from "../assets/placeholder-img.png";
 
 function ApartmentList({apartments}) {
-  const url = import.meta.env.VITE_API_URL;
   const { cityId } = useParams();
-  // const [allApartments, setAllApartments] = useState(null);
+
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
 
   console.log("Apartments",apartments)
-  // const fetchApartments = () => {
-  //   axios
-  //     .get(`${url}/apartments`)
-  //     .then((res) => {
-  //       setAllApartments(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
 
-  // useEffect(() => {
-  //   fetchApartments();
-  // }, []);
-
-  // wait for allApartments be filled with apartmentlist from fetching
   useEffect(() => {
     if (apartments) {
       const newApartmentsArr = apartments.filter((apartment) => {
