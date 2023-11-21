@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../styles/ApartmentDetails.css";
-// import ModalEdit from "../components/ModalEdit";
-
+import ModalEdit from "../components/ModalEdit";
 
 function ApartmentDetails() {
   const url = import.meta.env.VITE_API_URL;
@@ -44,8 +43,6 @@ function ApartmentDetails() {
           </div>
         </div>
       )}
-
-     
     </div>
   );
 }
