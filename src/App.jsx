@@ -26,7 +26,6 @@ function App() {
       });
   };
 
-
   useEffect(() => {
     fetchData("countries", setCountries);
     fetchData("cities", setCities);
@@ -39,22 +38,35 @@ function App() {
 
   return (
     <div className="App">
-
-      {location.pathname !== "/" && cities && countries && <Navbar fetchedCountries={countries} fetchedCities={cities} fetchedData = {fetchData} setApartments={setApartments} />}
+      {location.pathname !== "/" && cities && countries && (
+        <Navbar
+          fetchedCountries={countries}
+          fetchedCities={cities}
+          fetchedData={fetchData}
+          setApartments={setApartments}
+        />
+      )}
 
       <Routes>
-        (cities && countries && 
+        (cities && countries &&
         <Route
           path="/"
           element={
-            <HomePage fetchedCountries={countries} fetchedCities={cities} selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+            <HomePage
+              fetchedCountries={countries}
+              fetchedCities={cities}
+              selectedCity={selectedCity}
+              setSelectedCity={setSelectedCity}
+            />
           }
         />
         )
-        <Route path="/apartment-list/:cityId" element={<ApartmentList apartments={apartments}/>} />
+        <Route
+          path="/apartment-list/:cityId"
+          element={<ApartmentList apartments={apartments} />}
+        />
         <Route path="/cityName/:apartmentId" element={<ApartmentDetails />} />
       </Routes>
-        
     </div>
   );
 }
