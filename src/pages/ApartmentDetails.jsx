@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../styles/ApartmentDetails.css";
 import ModalEdit from "../components/ModalEdit";
+import editSvg from "../assets/pencil-simple-line.svg";
+import deleteSvg from "../assets/trash.svg";
 
 function ApartmentDetails() {
   const url = import.meta.env.VITE_API_URL;
