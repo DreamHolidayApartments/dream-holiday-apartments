@@ -52,7 +52,7 @@ function App() {
         />
         )
         <Route path="/apartment-list/:cityId" element={<ApartmentList apartments={apartments}/>} />
-        <Route path="/cityName/:apartmentId" element={<ApartmentDetails />} />
+        <Route path="/cityName/:apartmentId" element={<ApartmentDetails fetchedData = {fetchData} setApartments={setApartments}/>} />
       </Routes>
         
     </div>

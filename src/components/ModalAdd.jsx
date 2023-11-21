@@ -199,7 +199,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
         </Button>
         {selectedCity && (
           <Button className="btnAdd" variant="primary" onClick={handleSubmit}>
-            Save Changes
+            Add Apartment
           </Button>
         )}
       </Modal.Footer>

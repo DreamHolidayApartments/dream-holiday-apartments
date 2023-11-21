@@ -5,8 +5,14 @@ import "../styles/ApartmentDetails.css";
 import ModalEdit from "../components/ModalEdit";
 import editSvg from "../assets/pencil-simple-line.svg"
 import deleteSvg from "../assets/trash.svg"
+import ModalDelete from "../components/ModalDelete";
 
-function ApartmentDetails() {
+function ApartmentDetails({fetchedData,setApartments}) {
+
+  const [show, setShow] = useState(false);
+  const handleCloseDelete = () => setShow(false);
+  const handleShowDelete = () => setShow(true);
+
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();
   const [apartmentDetails, setApartmentDetails] = useState(null);
@@ -46,12 +52,23 @@ function ApartmentDetails() {
         </div>
       )}
       
-      <button class="editFloat" >
+      <button className="editFloat" >
         <img src={editSvg}/>
       </button>
-      <button class="deleteFloat" >
+      <button className="deleteFloat" onClick={handleShowDelete}>
         <img src={deleteSvg}/>
       </button>
+      {
+        apartmentDetails && 
+        <ModalDelete show= {show} 
+                     setShow = {setShow} 
+                     onHide ={handleCloseDelete} 
+                     id = {apartmentId} 
+                     cityId = {apartmentDetails.cityId}
+                     fetchedData = {fetchedData} setApartments={setApartments}
+                     />
+      }
+      
     </div>
   );
 }
