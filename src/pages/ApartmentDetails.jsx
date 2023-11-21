@@ -9,16 +9,16 @@ import ModalDelete from "../components/ModalDelete";
 
 function ApartmentDetails({fetchedData,setApartments}) {
 
-  const [show, setShow] = useState(false);
-  const handleCloseDelete = () => setShow(false);
-  const handleShowDelete = () => setShow(true);
+  const [showDelete, setShowDelete] = useState(false);
+  const handleCloseDelete = () => setShowDelete(false);
+  const handleShowDelete = () => setShowDelete(true);
 
 
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();
   const [apartmentDetails, setApartmentDetails] = useState(null);
 
-
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -76,8 +76,8 @@ function ApartmentDetails({fetchedData,setApartments}) {
       </button>
       {
         apartmentDetails && 
-        <ModalDelete show= {show} 
-                     setShow = {setShow} 
+        <ModalDelete showDelete= {showDelete} 
+                     setShowDelete = {setShowDelete} 
                      onHide ={handleCloseDelete} 
                      id = {apartmentId} 
                      cityId = {apartmentDetails.cityId}
