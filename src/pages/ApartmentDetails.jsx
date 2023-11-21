@@ -105,6 +105,8 @@ function ApartmentDetails({ fetchedData, setApartments }) {
             onHide={handleClose}
             apartmentDetails={apartmentDetails}
             updateDetails={fetchData}
+            fetchedData={fetchedData}
+            setApartments={setApartments}
           />
         </>
       )}
