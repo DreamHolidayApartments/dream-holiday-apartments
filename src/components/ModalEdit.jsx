@@ -7,8 +7,6 @@ import Form from "react-bootstrap/Form";
 function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
   const url = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
-  // const [filteredCities, setFilteredCities] = useState(null);
-  // const [selectedCity, setSelectedCity] = useState(null);
   const [title, setTitle] = useState(apartmentDetails.title);
   const [picURL, setPicURL] = useState(apartmentDetails.pictureURL);
   const [address, setAddress] = useState(apartmentDetails.address);
@@ -49,51 +47,16 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
   return (
     <Modal size="lg" show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Add Apartment</Modal.Title>
+        <Modal.Title>Edit Apartment</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
-          {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Select
-          aria-label="Default select example"
-          onChange={handleSelectCountry}
-        >
-          <option>Select Country</option>
-          {countries &&
-            countries.map((country) => {
-              return (
-                <option value={country.id} key={country.id}>
-                  {country.name}
-                </option>
-              );
-            })}
-        </Form.Select>
-      </Form.Group> */}
-          {/* 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-        <Form.Select
-          aria-label="Default select example"
-          onChange={(e) => {
-            setSelectedCity(e.target.value);
-          }}
-        >
-          <option>Select City</option>
-          {filteredCities &&
-            filteredCities.map((city) => {
-              return (
-                <option value={city.id} key={city.id}>
-                  {city.name}
-                </option>
-              );
-            })}
-        </Form.Select>
-      </Form.Group> */}
           <Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
               <Form.Label>Title</Form.Label>
               <Form.Control
                 type="text"
-                // placeholder="Enter Title"
+                placeholder="Enter Title"
                 autoFocus
                 value={title}
                 onChange={(e) => {
@@ -175,7 +138,7 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
           </Form.Group>
         </Form>
       </Modal.Body>
-      {/* <Modal.Footer>
+      <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
           Close
         </Button>
@@ -183,7 +146,7 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
         <Button className="btnAdd" variant="primary" onClick={handleSubmit}>
           Save Changes
         </Button>
-      </Modal.Footer> */}
+      </Modal.Footer>
     </Modal>
   );
 }

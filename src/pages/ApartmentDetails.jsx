@@ -3,21 +3,18 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../styles/ApartmentDetails.css";
 import ModalEdit from "../components/ModalEdit";
-import editSvg from "../assets/pencil-simple-line.svg"
-import deleteSvg from "../assets/trash.svg"
+import editSvg from "../assets/pencil-simple-line.svg";
+import deleteSvg from "../assets/trash.svg";
 import ModalDelete from "../components/ModalDelete";
 
-function ApartmentDetails({fetchedData,setApartments}) {
-
+function ApartmentDetails({ fetchedData, setApartments }) {
   const [show, setShow] = useState(false);
   const handleCloseDelete = () => setShow(false);
   const handleShowDelete = () => setShow(true);
 
-
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();
   const [apartmentDetails, setApartmentDetails] = useState(null);
-
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -64,27 +61,27 @@ function ApartmentDetails({fetchedData,setApartments}) {
           />
         </>
       )}
-      
-      <button className="editFloat" >
-        <img src={editSvg}/>
+
+      <button className="editFloat">
+        <img src={editSvg} />
       </button>
       <button className="deleteFloat" onClick={handleShowDelete}>
-        <img src={deleteSvg}/>
+        <img src={deleteSvg} />
       </button>
       <button className="btn " onClick={handleShow}>
         Edit
       </button>
-      {
-        apartmentDetails && 
-        <ModalDelete show= {show} 
-                     setShow = {setShow} 
-                     onHide ={handleCloseDelete} 
-                     id = {apartmentId} 
-                     cityId = {apartmentDetails.cityId}
-                     fetchedData = {fetchedData} setApartments={setApartments}
-                     />
-      }
-      
+      {apartmentDetails && (
+        <ModalDelete
+          show={show}
+          setShow={setShow}
+          onHide={handleCloseDelete}
+          id={apartmentId}
+          cityId={apartmentDetails.cityId}
+          fetchedData={fetchedData}
+          setApartments={setApartments}
+        />
+      )}
     </div>
   );
 }
