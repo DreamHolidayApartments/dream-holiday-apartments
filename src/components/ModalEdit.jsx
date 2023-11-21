@@ -175,7 +175,7 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
           </Form.Group>
         </Form>
       </Modal.Body>
-      <Modal.Footer>
+      {/* <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
           Close
         </Button>
@@ -183,7 +183,7 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
         <Button className="btnAdd" variant="primary" onClick={handleSubmit}>
           Save Changes
         </Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
   );
 }
