@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../styles/ApartmentDetails.css";
 
+
 function ApartmentDetails() {
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();
@@ -42,6 +43,8 @@ function ApartmentDetails() {
           </div>
         </div>
       )}
+
+     
     </div>
   );
 }

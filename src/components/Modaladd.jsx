@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 
 
-function Modaladd({ show,setShow,onHide, cities, countries }) {
+function Modaladd({ show,setShow,onHide, cities, countries, fetchedData, setApartments }) {
 
   let url = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Modaladd({ show,setShow,onHide, cities, countries }) {
   const [numofGuest, setNumOfGuest] = useState(0);
   const [book,setBook] = useState(false);
   const [description, setDescription] = useState("");
-  const [rating, setRating] = useState(0);
+
  
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,12 +33,17 @@ function Modaladd({ show,setShow,onHide, cities, countries }) {
         numOfGuest : numofGuest,
         book : book,
         description: description,
-        rating : rating
+        rating : 0
     }
 
     axios.post(`${url}/apartments`, requestBody )
             .then( response => {
+                // update list of apartments
+               
+
+                // redirect
                 navigate(`/apartment-list/${selectedCity}`);
+                fetchedData("apartments",setApartments)
             })
             .catch((error) => {
                 console.log("Error creating project in the API...");
