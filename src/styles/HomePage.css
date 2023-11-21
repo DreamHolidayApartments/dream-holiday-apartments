@@ -1,61 +1,67 @@
-
-.HomePage{
-    margin: 0 auto;
-    padding: 0;
-    background: 
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../assets/homepage-img.webp");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size:cover;
-    width: 100vw;
-    height: 100vh;
-    background-position: center center;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    
+.HomePage {
+  margin: 0 auto;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/homepage-img.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#inputGroupSelect01,#inputGroupSelect02{
-    font-size: 2rem;
-    color:antiquewhite;
-    margin: 20px;
-    background : none;
-    border: 2px solid antiquewhite;
-    width: 400px;
-    text-align: center;
-   
+.select-container {
+  width: 80vw;
+  margin: 60vh auto;
+  text-align: center;
 }
 
-#inputGroupSelect01 option{
-    background: rgba(0, 0, 0, 0.6);
-    color: antiquewhite;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
-}
-#inputGroupSelect02 option{
-    background: rgba(0, 0, 0, 0.6);
-    color: antiquewhite;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+#inputGroupSelect01,
+#inputGroupSelect02 {
+  font-size: 2rem;
+  color: antiquewhite;
+  margin: 1.2rem;
+  background: none;
+  border: 2px solid antiquewhite;
+  width: 400px;
+  height: 2.8rem;
+  text-align: center;
 }
 
-#btnSubmit1{
-    background:  none repeat scroll 0 0;
-    border: 2px solid antiquewhite;
-    color:antiquewhite;
-    font-size: 2rem;
-    font-weight: 500;
-    padding: 5px;
-    width: 200px;
-    height: 50px;
+#inputGroupSelect01 option {
+  background: rgba(0, 0, 0, 0.6);
+  color: antiquewhite;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+#inputGroupSelect02 option {
+  background: rgba(0, 0, 0, 0.6);
+  color: antiquewhite;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+#btnSubmit1 {
+  border: 2px solid antiquewhite;
+  color: antiquewhite;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0.1rem 0.8rem;
+  height: 2.8rem;
+  text-align: center;
+  text-decoration: none;
+  margin: 1.2rem;
+}
+
+@media (max-width: 1099px) {
+  .select-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    outline: medium none;
-    text-decoration: none;
-    margin: 20px;
-}
+  }
 
-.homepage-ele{  
-    width: 76vh;
-    margin: 0 auto; 
-    margin-top: 60vh;
+  #btnSubmit1 {
+    padding-bottom: 3rem;
+  }
 }

@@ -22,7 +22,7 @@ function HomePage({
 
   return (
     <div className="HomePage">
-      <div className="homepage-ele">
+      <div className="select-container">
         <label className="countryLabel">
           <select
             className="custom-select"
