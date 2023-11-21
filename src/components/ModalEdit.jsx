@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
+function ModalEdit({ show, setShow, onHide, apartmentDetails, updateDetails }) {
   const url = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [title, setTitle] = useState(apartmentDetails.title);
@@ -22,7 +23,7 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
     const requestBody = {
       title: title,
       pricePerNight: price,
-      cityId: parseInt(selectedCity),
+      cityId: apartmentDetails.cityId,
       pictureURL: picURL,
       address: address,
       numOfGuest: numOfGuest,
@@ -32,9 +33,10 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails }) {
     };
 
     axios
-      .post(`${url}/apartments`, requestBody)
+      .put(`${url}apartments/${apartmentDetails.id}`, requestBody)
       .then((response) => {
-        navigate(`/apartment-list/${selectedCity}`);
+        updateDetails();
+        console.log("Apartment added");
       })
       .catch((error) => {
         console.log("Error adding project in the API...");
