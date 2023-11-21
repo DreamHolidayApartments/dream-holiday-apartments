@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 
 
-function Modaladd({ show,setShow,onHide, cities, countries, fetchedData, setApartments }) {
+function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApartments }) {
 
   let url = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
@@ -25,33 +25,29 @@ function Modaladd({ show,setShow,onHide, cities, countries, fetchedData, setApar
     e.preventDefault();
 
     const requestBody = {
-        title: title,
-        pricePerNight : price,
-        cityId : parseInt(selectedCity),
-        pictureURL : picURL,
-        address : address,
-        numOfGuest : numofGuest,
-        book : book,
-        description: description,
-        rating : 0
-    }
+      title: title,
+      pricePerNight: price,
+      cityId: parseInt(selectedCity),
+      pictureURL: picURL,
+      address: address,
+      numOfGuest: numofGuest,
+      book: book,
+      description: description,
+      rating: 0,
+    };
 
-    axios.post(`${url}/apartments`, requestBody )
-            .then( response => {
-                // update list of apartments
-               
+    axios
+      .post(`${url}/apartments`, requestBody)
+      .then((response) => {
+        fetchedData("apartments", setApartments);
+        navigate(`/apartment-list/${selectedCity}`);
+      })
+      .catch((error) => {
+        console.log("Error creating project in the API...");
+        console.log(error);
+      });
 
-                // redirect
-                navigate(`/apartment-list/${selectedCity}`);
-                fetchedData("apartments",setApartments)
-            })
-            .catch((error) => {
-                console.log("Error creating project in the API...");
-                console.log(error);
-            })
-
-            setShow(false);
-
+    setShow(false);
   };
 
   const filterCities = (id) => {
@@ -211,4 +207,4 @@ function Modaladd({ show,setShow,onHide, cities, countries, fetchedData, setApar
   );
 }
 
-export default Modaladd;
+export default ModalAdd;

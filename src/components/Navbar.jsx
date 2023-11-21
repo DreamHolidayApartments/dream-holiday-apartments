@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import img1 from "../assets/logo.png"
 import { useState } from "react"
-import Modaladd from "./Modaladd";
+import ModalAdd from "./ModalAdd";
 
 
 function Navbar({ fetchedCountries, fetchedCities, fetchedData, setApartments }) {
@@ -33,7 +33,7 @@ function Navbar({ fetchedCountries, fetchedCities, fetchedData, setApartments })
     </div>
     <div className="nav2">
     <button className="btn btn-outline-light" onClick={handleShow}>Add Apartment</button>
-    <Modaladd show= {show} setShow = {setShow} onHide ={handleClose} cities={fetchedCities} countries={fetchedCountries} fetchedData = {fetchedData} setApartments={setApartments}/>
+    <ModalAdd show= {show} setShow = {setShow} onHide ={handleClose} cities={fetchedCities} countries={fetchedCountries} fetchedData = {fetchedData} setApartments={setApartments}/>
     </div>
   </nav>
   )
