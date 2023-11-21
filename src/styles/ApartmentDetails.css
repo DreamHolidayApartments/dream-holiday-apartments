@@ -39,5 +39,35 @@
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
-  border: none
+  	border: none
+}
+
+.cardText{
+	color: rgb(113, 111, 111);
+	height: 0vh;
+}
+
+.card-body p {
+    margin-bottom: 0.5rem;
+    position: relative;
+    height: auto;
+}
+
+.col {
+	padding: 0;
+}
+
+.cardBtn{
+	position:absolute;
+	right: 20px;
+	bottom:10px;
+	padding: 10px;
+	background-color: #e8b384;
+	border-radius:90px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	color: rgb(50, 50, 50);
+	width: 100px;
+	font-weight: 600;
+	text-decoration: none;
 }

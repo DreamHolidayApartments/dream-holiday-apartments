@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../styles/ApartmentDetails.css";
 import ModalEdit from "../components/ModalEdit";
 import editSvg from "../assets/pencil-simple-line.svg";
 import deleteSvg from "../assets/trash.svg";
 import ModalDelete from "../components/ModalDelete";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function ApartmentDetails({ fetchedData, setApartments }) {
   const [showDelete, setShowDelete] = useState(false);
@@ -39,7 +44,47 @@ function ApartmentDetails({ fetchedData, setApartments }) {
     <div>
       {apartmentDetails && (
         <>
-          <div id="ApartmentDetails">
+        <Container style={{ width: "100rem",margin:"0 auto" }}>
+          <Row style={{ margin:"40px 0" }}>
+
+            <Col>
+              <Card style={{ width: "40rem", height: "40rem" }}>
+                <Card.Img style={{ width: "40rem", height: "50rem" }}  src={apartmentDetails.pictureURL} />
+              </Card>
+            </Col>
+
+            <Col>
+              <Card style={{ width: "30rem", height: "40rem", backgroundColor: "aliceblue" }}>
+                <Card.Body >
+                  <Card.Title style={{ fontSize: "40px" }}>{apartmentDetails.title}</Card.Title>
+                  <Card.Text className="cardText">
+                  {apartmentDetails.address}
+                  </Card.Text>
+                  <hr/>
+                  <Card.Text style={{ fontSize: "20px" , textAlign: "end"}} >
+                  &#9733;{apartmentDetails.rating}
+                  </Card.Text>
+                  <Card.Title>Description</Card.Title>
+                  <Card.Text>
+                  {apartmentDetails.description}
+                  </Card.Text>
+                  <Card.Title>Guests</Card.Title>
+                  <Card.Text>
+                  {apartmentDetails.numOfGuest} Beds
+                  </Card.Text>
+                  <Card.Title>Price per Night</Card.Title>
+                  <Card.Text>
+                  {apartmentDetails.pricePerNight} €
+                  </Card.Text>
+                  <Link className="cardBtn">Go Back</Link>
+                 
+                </Card.Body>
+              </Card>
+            </Col>
+
+          </Row>
+</Container>
+          {/* <div id="ApartmentDetails">
             <div className="apt1">
               <h1>{apartmentDetails.title}</h1>
               <img src={apartmentDetails.pictureURL} id="apartment-img"></img>
@@ -52,7 +97,7 @@ function ApartmentDetails({ fetchedData, setApartments }) {
               <p>{apartmentDetails.address}</p>
               <p>{apartmentDetails.description}</p>
             </div>
-          </div>
+          </div> */}
 
           <ModalEdit
             show={show}
