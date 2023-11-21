@@ -74,8 +74,7 @@ function ApartmentDetails({ fetchedData, setApartments }) {
       </button>
       {apartmentDetails && (
         <ModalDelete
-          show={show}
-          setShow={setShow}
+          showDelete={showDelete}
           onHide={handleCloseDelete}
           id={apartmentId}
           cityId={apartmentDetails.cityId}
