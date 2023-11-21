@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "../styles/ApartmentDetails.css";
 // import ModalEdit from "../components/ModalEdit";
 
+
 function ApartmentDetails() {
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();
@@ -43,16 +44,8 @@ function ApartmentDetails() {
           </div>
         </div>
       )}
-      <button className="btn btn-outline-light" onClick={handleShow}>
-        Add Apartment
-      </button>
-      <ModalEdit
-        show={show}
-        setShow={setShow}
-        onHide={handleClose}
-        cities={fetchedCities}
-        countries={fetchedCountries}
-      />
+
+     
     </div>
   );
 }

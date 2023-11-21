@@ -4,35 +4,22 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/ApartmentList.css";
 import placeholderImg from "../assets/placeholder-img.png";
 
-function ApartmentList() {
-  const url = import.meta.env.VITE_API_URL;
+function ApartmentList({apartments}) {
   const { cityId } = useParams();
-  const [allApartments, setAllApartments] = useState(null);
+
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
 
-  const fetchApartments = () => {
-    axios
-      .get(`${url}/apartments`)
-      .then((res) => {
-        setAllApartments(res.data);
-      })
-      .catch((err) => console.log(err));
-  };
+  console.log("Apartments",apartments)
 
   useEffect(() => {
-    fetchApartments();
-  }, []);
-
-  // wait for allApartments be filled with apartmentlist from fetching
-  useEffect(() => {
-    if (allApartments) {
-      const newApartmentsArr = allApartments.filter((apartment) => {
+    if (apartments) {
+      const newApartmentsArr = apartments.filter((apartment) => {
         return apartment.cityId == cityId;
       });
       setApartmentsInCity(newApartmentsArr);
       console.log(apartmentsInCity);
     }
-  }, [allApartments]);
+  }, [apartments]);
 
   return (
     <div id="ApartmentList">

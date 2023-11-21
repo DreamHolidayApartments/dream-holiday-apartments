@@ -2,9 +2,13 @@ import "../styles/HomePage.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function HomePage({ fetchedCountries, fetchedCities }) {
+function HomePage({
+  fetchedCountries,
+  fetchedCities,
+  selectedCity,
+  setSelectedCity,
+}) {
   const [filteredCities, setFilteredCities] = useState(null);
-  const [selectedCity, setSelectedCity] = useState(null);
 
   const filterCities = (id) => {
     let newList = fetchedCities.filter((city) => city.countryId == id);
