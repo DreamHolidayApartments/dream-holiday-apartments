@@ -13,16 +13,20 @@ function ApartmentDetails({fetchedData,setApartments}) {
   const handleCloseDelete = () => setShow(false);
   const handleShowDelete = () => setShow(true);
 
+
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();
   const [apartmentDetails, setApartmentDetails] = useState(null);
+
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const fetchData = () => {
     axios
       .get(`${url}/apartments/${apartmentId}`)
       .then((res) => {
         setApartmentDetails(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -36,20 +40,29 @@ function ApartmentDetails({fetchedData,setApartments}) {
   return (
     <div>
       {apartmentDetails && (
-        <div id="ApartmentDetails">
-          <div className="apt1">
-            <h1>{apartmentDetails.title}</h1>
-            <img src={apartmentDetails.pictureURL} id="apartment-img"></img>
+        <>
+          <div id="ApartmentDetails">
+            <div className="apt1">
+              <h1>{apartmentDetails.title}</h1>
+              <img src={apartmentDetails.pictureURL} id="apartment-img"></img>
+            </div>
+
+            <div className="details-container">
+              <h1>Apartment Details</h1>
+              <p>{apartmentDetails.numOfGuest} beds</p>
+              <p>&#9733;{apartmentDetails.rating}</p>
+              <p>{apartmentDetails.address}</p>
+              <p>{apartmentDetails.description}</p>
+            </div>
           </div>
 
-          <div className="details-container">
-            <h1>Apartment Details</h1>
-            <p>{apartmentDetails.numOfGuest} beds</p>
-            <p>&#9733;{apartmentDetails.rating}</p>
-            <p>{apartmentDetails.address}</p>
-            <p>{apartmentDetails.description}</p>
-          </div>
-        </div>
+          <ModalEdit
+            show={show}
+            setShow={setShow}
+            onHide={handleClose}
+            apartmentDetails={apartmentDetails}
+          />
+        </>
       )}
       
       <button className="editFloat" >
@@ -57,6 +70,9 @@ function ApartmentDetails({fetchedData,setApartments}) {
       </button>
       <button className="deleteFloat" onClick={handleShowDelete}>
         <img src={deleteSvg}/>
+      </button>
+      <button className="btn " onClick={handleShow}>
+        Edit
       </button>
       {
         apartmentDetails && 
