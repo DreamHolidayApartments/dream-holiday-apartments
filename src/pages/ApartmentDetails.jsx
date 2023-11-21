@@ -63,15 +63,13 @@ function ApartmentDetails({ fetchedData, setApartments }) {
         </>
       )}
 
-      <button className="editFloat">
+      <button className="editFloat" onClick={handleShow}>
         <img src={editSvg} />
       </button>
       <button className="deleteFloat" onClick={handleShowDelete}>
         <img src={deleteSvg} />
       </button>
-      <button className="btn " onClick={handleShow}>
-        Edit
-      </button>
+
       {apartmentDetails && (
         <ModalDelete
           showDelete={showDelete}
