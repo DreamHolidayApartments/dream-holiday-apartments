@@ -79,7 +79,7 @@ function ApartmentList() {
                     {apartment.pricePerNight} € per Night
                   </p>
                   <Link
-                    className="btn btn-primary"
+                    className="btn btn-primary check-it-out"
                     to={`/cityname/${apartment.id}`}
                   >
                     Check it out
