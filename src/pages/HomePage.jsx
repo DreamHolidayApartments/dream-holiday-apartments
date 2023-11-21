@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function HomePage({ fetchedCountries, fetchedCities }) {
-
   const [filteredCities, setFilteredCities] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
 

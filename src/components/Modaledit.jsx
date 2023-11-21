@@ -1,6 +1,6 @@
 import React from "react";
 
-function Modaledit() {
+function ModalEdit() {
   let url = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [filteredCities, setFilteredCities] = useState(null);
@@ -55,7 +55,7 @@ function Modaledit() {
   return (
     <Modal size="lg" show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Add Apartment</Modal.Title>
+        <Modal.Title>Edit Apartment</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -219,4 +219,4 @@ function Modaledit() {
   );
 }
 
-export default Modaledit;
+export default ModalEdit;
