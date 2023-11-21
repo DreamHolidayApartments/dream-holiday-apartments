@@ -7,12 +7,9 @@ import editSvg from "../assets/pencil-simple-line.svg";
 import deleteSvg from "../assets/trash.svg";
 import ModalDelete from "../components/ModalDelete";
 
-function ApartmentDetails({ fetchedData, setApartments }) {
-  const [show, setShow] = useState(false);
-  const handleCloseDelete = () => setShow(false);
-  const handleShowDelete = () => setShow(true);
-function ApartmentDetails({fetchedData,setApartments}) {
 
+function ApartmentDetails({fetchedData,setApartments}) {
+  const [show, setShow] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const handleCloseDelete = () => setShowDelete(false);
   const handleShowDelete = () => setShowDelete(true);
