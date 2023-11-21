@@ -4,12 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/ApartmentList.css";
 import placeholderImg from "../assets/placeholder-img.png";
 
-function ApartmentList({apartments}) {
+function ApartmentList({ apartments }) {
   const { cityId } = useParams();
 
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
-
-  console.log("Apartments",apartments)
 
   useEffect(() => {
     if (apartments) {
@@ -17,7 +15,6 @@ function ApartmentList({apartments}) {
         return apartment.cityId == cityId;
       });
       setApartmentsInCity(newApartmentsArr);
-      console.log(apartmentsInCity);
     }
   }, [apartments]);
 

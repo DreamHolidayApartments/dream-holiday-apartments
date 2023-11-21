@@ -1,13 +1,19 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-function ModalEdit({ show, setShow, onHide, apartmentDetails, updateDetails }) {
+function ModalEdit({
+  show,
+  setShow,
+  onHide,
+  apartmentDetails,
+  updateDetails,
+  fetchedData,
+  setApartments,
+}) {
   const url = import.meta.env.VITE_API_URL;
-  const navigate = useNavigate();
   const [title, setTitle] = useState(apartmentDetails.title);
   const [picURL, setPicURL] = useState(apartmentDetails.pictureURL);
   const [address, setAddress] = useState(apartmentDetails.address);
@@ -36,7 +42,7 @@ function ModalEdit({ show, setShow, onHide, apartmentDetails, updateDetails }) {
       .put(`${url}apartments/${apartmentDetails.id}`, requestBody)
       .then((response) => {
         updateDetails();
-        console.log("Apartment added");
+        fetchedData("apartments", setApartments);
       })
       .catch((error) => {
         console.log("Error adding project in the API...");

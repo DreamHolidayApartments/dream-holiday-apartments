@@ -32,9 +32,7 @@ function App() {
     fetchData("apartments", setApartments);
   }, []);
 
-  useEffect(() => {
-    console.log(cities);
-  }, [cities]);
+  useEffect(() => {}, [cities]);
 
   return (
     <div className="App">
@@ -61,8 +59,19 @@ function App() {
           }
         />
         )
-        <Route path="/apartment-list/:cityId" element={<ApartmentList apartments={apartments}/>} />
-        <Route path="/cityName/:apartmentId" element={<ApartmentDetails fetchedData = {fetchData} setApartments={setApartments}/>} />
+        <Route
+          path="/apartment-list/:cityId"
+          element={<ApartmentList apartments={apartments} />}
+        />
+        <Route
+          path="/cityName/:apartmentId"
+          element={
+            <ApartmentDetails
+              fetchedData={fetchData}
+              setApartments={setApartments}
+            />
+          }
+        />
       </Routes>
     </div>
   );
