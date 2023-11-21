@@ -11,6 +11,12 @@ function ApartmentDetails({ fetchedData, setApartments }) {
   const [show, setShow] = useState(false);
   const handleCloseDelete = () => setShow(false);
   const handleShowDelete = () => setShow(true);
+function ApartmentDetails({fetchedData,setApartments}) {
+
+  const [showDelete, setShowDelete] = useState(false);
+  const handleCloseDelete = () => setShowDelete(false);
+  const handleShowDelete = () => setShowDelete(true);
+
 
   const url = import.meta.env.VITE_API_URL;
   const { apartmentId } = useParams();

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 
-function ModalDelete({show,setShow,onHide,id, cityId, fetchedData,setApartments}) {
+function ModalDelete({showDelete,setShowDelete,onHide,id, cityId, fetchedData,setApartments}) {
 
     const url = import.meta.env.VITE_API_URL;
 
@@ -20,11 +20,11 @@ function ModalDelete({show,setShow,onHide,id, cityId, fetchedData,setApartments}
             console.log("Error deleting apartment...");
             console.log(error);
         })
-        setShow(false);
+        setShowDelete(false);
     }
 
   return (
-    <Modal centered show={show} onHide={onHide}>
+    <Modal centered show={showDelete} onHide={onHide}>
       <Modal.Header closeButton>
         <Modal.Title>Delete Apartment</Modal.Title>
       </Modal.Header>
