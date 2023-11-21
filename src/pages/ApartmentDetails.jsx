@@ -54,7 +54,7 @@ function ApartmentDetails({ fetchedData, setApartments }) {
             </Col>
 
             <Col>
-              <Card style={{ width: "30rem", height: "40rem", backgroundColor: "aliceblue" }}>
+              <Card style={{ width: "40rem", height: "40rem", backgroundColor: "aliceblue" }}>
                 <Card.Body >
                   <Card.Title style={{ fontSize: "40px" }}>{apartmentDetails.title}</Card.Title>
                   <Card.Text className="cardText">
