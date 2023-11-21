@@ -25,12 +25,16 @@ function ApartmentDetails() {
   }, []);
 
   return (
-    <div id="ApartmentDetails">
+    <div>
       {apartmentDetails && (
-        <div>
+        <div id="ApartmentDetails">
+        <div className="apt1">
           <h1>{apartmentDetails.title}</h1>
           <img src={apartmentDetails.pictureURL} id="apartment-img"></img>
+        </div>
+     
           <div className="details-container">
+          <h1>Apartment Details</h1>
             <p>{apartmentDetails.numOfGuest} beds</p>
             <p>&#9733;{apartmentDetails.rating}</p>
             <p>{apartmentDetails.address}</p>

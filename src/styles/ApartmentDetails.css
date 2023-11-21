@@ -1,6 +1,7 @@
 #ApartmentDetails {
   margin: 2rem auto;
   width: 90vw;
+  display: flex;
 }
 
 #apartment-img {
@@ -12,4 +13,5 @@
 .details-container {
   width: 20vw;
   display: block;
+  margin: 10px;
 }

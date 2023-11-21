@@ -38,7 +38,7 @@ function Modaladd({ show,setShow,onHide, cities, countries }) {
 
     axios.post(`${url}/apartments`, requestBody )
             .then( response => {
-                navigate(`/apartmentList/${selectedCity}`);
+                navigate(`/apartment-list/${selectedCity}`);
             })
             .catch((error) => {
                 console.log("Error creating project in the API...");
