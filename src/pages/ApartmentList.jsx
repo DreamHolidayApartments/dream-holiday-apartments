@@ -69,9 +69,7 @@ function ApartmentList({ apartments }) {
 
                 <div className="card-body">
                   <div className="card-head">
-                    <h5 className="card-title">
-                      {apartment.title.slice(0, 21)}
-                    </h5>
+                    <h6 className="card-title">{apartment.title}</h6>
                     <p> &#9733;{apartment.rating} </p>
                   </div>
                   <p id="beds">&#183; {apartment.numOfGuest} beds &#183;</p>
