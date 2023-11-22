@@ -202,6 +202,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
                 <Form.Label>Description</Form.Label>
                 <Form.Control
                   required
+                  maxLength={400}
                   as="textarea"
                   placeholder="Enter Description"
                   autoFocus

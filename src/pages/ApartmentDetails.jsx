@@ -48,13 +48,13 @@ function ApartmentDetails({ fetchedData, setApartments }) {
           <Row style={{ margin:"40px 0" }}>
 
             <Col>
-              <Card style={{ width: "40rem", height: "40rem" }}>
-                <Card.Img style={{ width: "40rem", height: "50rem" }}  src={apartmentDetails.pictureURL} />
+              <Card style={{ width: "40rem", height: "30rem" }}>
+                <Card.Img style={{ width: "40rem", height: "30rem" }}  src={apartmentDetails.pictureURL} />
               </Card>
             </Col>
 
             <Col>
-              <Card style={{ width: "40rem", height: "40rem", backgroundColor: "aliceblue" }}>
+              <Card style={{ width: "40rem", height: "30rem", backgroundColor: "aliceblue" }}>
                 <Card.Body >
                   <Card.Title style={{ fontSize: "40px" }}>{apartmentDetails.title}</Card.Title>
                   <Card.Text className="cardText">
@@ -76,7 +76,7 @@ function ApartmentDetails({ fetchedData, setApartments }) {
                   <Card.Text>
                   {apartmentDetails.pricePerNight} €
                   </Card.Text>
-                  <Link className="cardBtn">Go Back</Link>
+                  <Link className="cardBtn" to={`/apartment-list/${apartmentDetails.cityId}`}>Go Back</Link>
                  
                 </Card.Body>
               </Card>
@@ -84,20 +84,6 @@ function ApartmentDetails({ fetchedData, setApartments }) {
 
           </Row>
 </Container>
-          {/* <div id="ApartmentDetails">
-            <div className="apt1">
-              <h1>{apartmentDetails.title}</h1>
-              <img src={apartmentDetails.pictureURL} id="apartment-img"></img>
-            </div>
-
-            <div className="details-container">
-              <h1>Apartment Details</h1>
-              <p>{apartmentDetails.numOfGuest} beds</p>
-              <p>&#9733;{apartmentDetails.rating}</p>
-              <p>{apartmentDetails.address}</p>
-              <p>{apartmentDetails.description}</p>
-            </div>
-          </div> */}
 
           <ModalEdit
             show={show}
