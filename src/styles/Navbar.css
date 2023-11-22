@@ -1,0 +1,42 @@
+.Navbar {
+  background-color: #7c9d96;
+  color: #f4f2de;
+  height: 4rem;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav1 {
+  height: 4rem;
+}
+
+.nav1 ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  height: 4rem;
+}
+
+.nav1 ul li a {
+  text-decoration: none;
+  color: #f4f2de;
+}
+
+.nav1 ul li {
+  margin: 20px;
+}
+
+.nav2 button {
+  margin: 20px;
+}
+
+.add-btn {
+  color: #f4f2de;
+  border: 1px solid #f4f2de;
+}
+
+.add-btn:hover {
+  background-color: #f4f2de;
+}

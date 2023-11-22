@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import img1 from "../assets/logo.png";
 import { useState } from "react";
 import ModalAdd from "./ModalAdd";
+import "../styles/Navbar.css";
 
 function Navbar({
   fetchedCountries,
@@ -14,7 +15,7 @@ function Navbar({
   const handleShow = () => setShow(true);
 
   return (
-    <nav className="navBarStyle">
+    <nav className=" Navbar">
       <div className="nav1">
         <ul>
           <li>
@@ -22,7 +23,10 @@ function Navbar({
               <img
                 src={img1}
                 alt=""
-                style={{ width: "4rem", height: "4rem" }}
+                style={{
+                  width: "4rem",
+                  height: "4rem",
+                }}
               />
             </Link>
           </li>
@@ -38,7 +42,7 @@ function Navbar({
         </ul>
       </div>
       <div className="nav2">
-        <button className="btn btn-outline-light" onClick={handleShow}>
+        <button className="btn btn-outline-light add-btn" onClick={handleShow}>
           Add Apartment
         </button>
         <ModalAdd

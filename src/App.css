@@ -7,38 +7,3 @@ button:hover: #D2A177  */
   padding: 0;
   box-sizing: border-box;
 }
-
-.navBarStyle {
-  height: 4rem;
-  background-color: #7c9d96;
-  color: #f4f2de;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav1 ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  align-items: center;
-}
-
-.nav1 ul li a {
-  text-decoration: none;
-  color: #f4f2de;
-}
-
-.nav1 ul li {
-  margin: 20px;
-}
-
-.nav2 button {
-  margin: 20px;
-}
-
-.btnAdd{
-  background-color: #7C9D96;
-}
-

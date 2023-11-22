@@ -64,7 +64,7 @@ function App() {
           element={<ApartmentList apartments={apartments} />}
         />
         <Route
-          path="/cityName/:apartmentId"
+          path="/apartment/:apartmentId"
           element={
             <ApartmentDetails
               fetchedData={fetchData}

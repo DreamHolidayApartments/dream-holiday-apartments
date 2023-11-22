@@ -84,7 +84,7 @@ function ApartmentList({ apartments }) {
                   </p>
                   <Link
                     className="btn btn-primary check-it-out"
-                    to={`/cityname/${apartment.id}`}
+                    to={`/apartment/${apartment.id}`}
                   >
                     Check it out
                   </Link>
