@@ -5,7 +5,6 @@ import placeholderImg from "../assets/placeholder-img.png";
 
 function ApartmentList({ apartments }) {
   const { cityId } = useParams();
-
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
 
   useEffect(() => {
@@ -13,7 +12,7 @@ function ApartmentList({ apartments }) {
       const newApartmentsArr = apartments.filter((apartment) => {
         return apartment.cityId == cityId;
       });
-      setApartmentsInCity(newApartmentsArr);
+      setApartmentsInCity(newApartmentsArr.reverse());
     }
   }, [apartments]);
 
