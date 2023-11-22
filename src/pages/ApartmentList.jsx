@@ -56,7 +56,7 @@ function ApartmentList({ apartments }) {
                 ) : (
                   <>
                     <img
-                      className="card-img-to opacity-25"
+                      className="card-img-top opacity-25"
                       src={
                         apartment.pictureURL
                           ? `${apartment.pictureURL}`
