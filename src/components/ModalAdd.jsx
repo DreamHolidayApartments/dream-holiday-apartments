@@ -19,11 +19,19 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
   const [numofGuest, setNumOfGuest] = useState(0);
   const [book,setBook] = useState(false);
   const [description, setDescription] = useState("");
+  const [validated, setValidated] = useState(false);
 
  
   const handleSubmit = (e) => {
+    
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setValidated(true);
+    
     e.preventDefault();
-
     const requestBody = {
       title: title,
       pricePerNight: price,
@@ -65,8 +73,9 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
       <Modal.Header closeButton>
         <Modal.Title>Add Apartment</Modal.Title>
       </Modal.Header>
+      <Form validated={validated} onSubmit={handleSubmit}>
       <Modal.Body>
-        <Form>
+        
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Select
               aria-label="Default select example"
@@ -110,7 +119,12 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
                 controlId="exampleForm.ControlInput3"
               >
                 <Form.Label>Title</Form.Label>
-                <Form.Control type="text" placeholder="Enter Title" autoFocus value={title} onChange={(e)=>{setTitle(e.target.value)}} />
+                <Form.Control 
+                  required 
+                  type="text" 
+                  placeholder="Enter Title" 
+                  autoFocus value={title} 
+                  onChange={(e)=>{setTitle(e.target.value)}} />
               </Form.Group>
               <Form.Group
                 className="mb-3"
@@ -124,6 +138,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
                   value={picURL}
                   onChange={(e)=>{setPicURL(e.target.value)}}
                 />
+          
               </Form.Group>
               <Form.Group
                 className="mb-3"
@@ -131,6 +146,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
               >
                 <Form.Label>Address</Form.Label>
                 <Form.Control
+                  required
                   type="text"
                   placeholder="Enter Address"
                   autoFocus
@@ -144,6 +160,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
               >
                 <Form.Label>Price Per Night</Form.Label>
                 <Form.Control
+                  required
                   type="number"
                   placeholder="Enter Price Per Night"
                   autoFocus
@@ -157,6 +174,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
               >
                 <Form.Label>Guest Capacity</Form.Label>
                 <Form.Control
+                  required
                   type="number"
                   placeholder="Enter Guest Capacity"
                   autoFocus
@@ -169,6 +187,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
                 controlId="exampleForm.ControlInput7"
               >
                 <Form.Check // prettier-ignore
+                  
                   type="switch"
                   id="custom-switch"
                   label="Booking is Available"
@@ -182,6 +201,7 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
               >
                 <Form.Label>Description</Form.Label>
                 <Form.Control
+                  required
                   as="textarea"
                   placeholder="Enter Description"
                   autoFocus
@@ -191,18 +211,19 @@ function ModalAdd({ show,setShow,onHide, cities, countries, fetchedData, setApar
               </Form.Group>
             </Form.Group>
           )}
-        </Form>
+       
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
           Close
         </Button>
         {selectedCity && (
-          <Button className="btnAdd" variant="primary" onClick={handleSubmit}>
+          <Button className="btnAdd" variant="primary" type="submit">
             Add Apartment
           </Button>
         )}
       </Modal.Footer>
+      </Form>
     </Modal>
   );
 }
