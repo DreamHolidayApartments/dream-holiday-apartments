@@ -11,6 +11,11 @@
   gap: 5rem;
 }
 
+.card {
+  height: 28rem;
+  width: 28rem;
+}
+
 .card-img-top {
   max-height: 12rem;
   object-fit: cover;
@@ -26,10 +31,35 @@
   height: 1rem;
 }
 
+#price {
+  display: inline;
+  justify-self: end;
+}
+
+#short-description {
+  height: 7rem;
+  margin-top: 0.5rem;
+}
+
+#not-available {
+  position: absolute;
+  top: 5rem;
+  left: 5.2rem;
+  border: 1px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgb(116, 114, 114);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
 .card-body p {
   margin-bottom: 0.5rem;
   position: relative;
-  height: 8vh;
+  height: 40px;
 }
 
 #filter-btn {
@@ -49,6 +79,7 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  margin-left: 1.2rem;
 }
 
 .check-it-out:hover {

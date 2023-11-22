@@ -17,7 +17,7 @@ function ModalEdit({
   const [title, setTitle] = useState(apartmentDetails.title);
   const [picURL, setPicURL] = useState(apartmentDetails.pictureURL);
   const [address, setAddress] = useState(apartmentDetails.address);
-  const [price, setPrice] = useState(apartmentDetails.price);
+  const [price, setPrice] = useState(apartmentDetails.pricePerNight);
   const [numOfGuest, setNumOfGuest] = useState(apartmentDetails.numOfGuest);
   const [book, setBook] = useState(apartmentDetails.book);
   const [description, setDescription] = useState(apartmentDetails.description);

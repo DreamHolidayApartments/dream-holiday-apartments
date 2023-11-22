@@ -7,6 +7,12 @@ function ApartmentList({ apartments }) {
   const { cityId } = useParams();
 
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
+  const [shortDescription, setShortDescription] = useState("");
+
+  const cutDescription = (description) => {
+    console.log(description.slice(0, 80));
+    return description.slice(0, 80);
+  };
 
   useEffect(() => {
     if (apartments) {
@@ -42,23 +48,44 @@ function ApartmentList({ apartments }) {
                 style={{ width: "18rem" }}
                 key={apartment.id}
               >
-                <img
-                  className="card-img-top"
-                  src={
-                    apartment.pictureURL
-                      ? `${apartment.pictureURL}`
-                      : placeholderImg
-                  }
-                  alt="Photo of Apartment"
-                />
+                {apartment.book === true ? (
+                  <>
+                    <img
+                      className="card-img-top opacity-25"
+                      src={
+                        apartment.pictureURL
+                          ? `${apartment.pictureURL}`
+                          : placeholderImg
+                      }
+                      alt="Photo of Apartment"
+                    />
+                    <p id="not-available">Not Available</p>
+                  </>
+                ) : (
+                  <img
+                    className="card-img-top "
+                    src={
+                      apartment.pictureURL
+                        ? `${apartment.pictureURL}`
+                        : placeholderImg
+                    }
+                    alt="Photo of Apartment"
+                  />
+                )}
+
                 <div className="card-body">
                   <div className="card-head">
-                    <h5 className="card-title">{apartment.title}</h5>
+                    <h5 className="card-title">
+                      {apartment.title.slice(0, 21)}
+                    </h5>
                     <p> &#9733;{apartment.rating} </p>
                   </div>
                   <p id="beds">&#183; {apartment.numOfGuest} beds &#183;</p>
-                  <p>{apartment.description}</p>
-                  <p className="card-text">
+                  <p id="short-description">
+                    {apartment.description.slice(0, 80)}
+                  </p>
+
+                  <p className="card-text" id="price">
                     {apartment.pricePerNight} € per Night
                   </p>
                   <Link
