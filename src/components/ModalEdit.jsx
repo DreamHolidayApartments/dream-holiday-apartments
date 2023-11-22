@@ -146,6 +146,7 @@ function ModalEdit({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput8">
               <Form.Label>Description</Form.Label>
               <Form.Control
+                maxLength={400}
                 as="textarea"
                 placeholder="Enter Description"
                 autoFocus
