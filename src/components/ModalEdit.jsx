@@ -22,8 +22,16 @@ function ModalEdit({
   const [book, setBook] = useState(apartmentDetails.book);
   const [description, setDescription] = useState(apartmentDetails.description);
   const [rating, setRating] = useState(apartmentDetails.rating);
+  const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    setValidated(true);
     e.preventDefault();
 
     const requestBody = {
@@ -57,8 +65,8 @@ function ModalEdit({
       <Modal.Header closeButton>
         <Modal.Title>Edit Apartment</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <Form>
+      <Form validated={validated} onSubmit={handleSubmit}>
+        <Modal.Body>
           <Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
               <Form.Label>Title</Form.Label>
@@ -66,6 +74,7 @@ function ModalEdit({
                 type="text"
                 placeholder="Enter Title"
                 autoFocus
+                required
                 value={title}
                 onChange={(e) => {
                   setTitle(e.target.value);
@@ -90,6 +99,7 @@ function ModalEdit({
                 type="text"
                 placeholder="Enter Address"
                 autoFocus
+                required
                 value={address}
                 onChange={(e) => {
                   setAddress(e.target.value);
@@ -102,6 +112,7 @@ function ModalEdit({
                 type="number"
                 placeholder="Enter Price Per Night"
                 autoFocus
+                required
                 value={price}
                 onChange={(e) => {
                   setPrice(e.target.value);
@@ -114,6 +125,7 @@ function ModalEdit({
                 type="number"
                 placeholder="Enter Guest Capacity"
                 autoFocus
+                required
                 value={numOfGuest}
                 onChange={(e) => {
                   setNumOfGuest(e.target.value);
@@ -137,6 +149,7 @@ function ModalEdit({
                 as="textarea"
                 placeholder="Enter Description"
                 autoFocus
+                required
                 value={description}
                 onChange={(e) => {
                   setDescription(e.target.value);
@@ -144,17 +157,17 @@ function ModalEdit({
               />
             </Form.Group>
           </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
-          Close
-        </Button>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={onHide}>
+            Close
+          </Button>
 
-        <Button className="btnAdd" variant="primary" onClick={handleSubmit}>
-          Save Changes
-        </Button>
-      </Modal.Footer>
+          <Button className="btnAdd" variant="primary" type="submit">
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Form>
     </Modal>
   );
 }
