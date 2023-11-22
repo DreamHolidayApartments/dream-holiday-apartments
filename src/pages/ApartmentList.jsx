@@ -7,12 +7,6 @@ function ApartmentList({ apartments }) {
   const { cityId } = useParams();
 
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
-  const [shortDescription, setShortDescription] = useState("");
-
-  const cutDescription = (description) => {
-    console.log(description.slice(0, 80));
-    return description.slice(0, 80);
-  };
 
   useEffect(() => {
     if (apartments) {
@@ -42,6 +36,7 @@ function ApartmentList({ apartments }) {
       <div className="list-container">
         {apartmentsInCity &&
           apartmentsInCity.map((apartment) => {
+            console.log(apartment.title, apartment.book);
             return (
               <div
                 className="card"
@@ -49,9 +44,19 @@ function ApartmentList({ apartments }) {
                 key={apartment.id}
               >
                 {apartment.book === true ? (
+                  <img
+                    className="card-img-top"
+                    src={
+                      apartment.pictureURL
+                        ? `${apartment.pictureURL}`
+                        : placeholderImg
+                    }
+                    alt="Photo of Apartment"
+                  />
+                ) : (
                   <>
                     <img
-                      className="card-img-top opacity-25"
+                      className="card-img-to opacity-25"
                       src={
                         apartment.pictureURL
                           ? `${apartment.pictureURL}`
@@ -61,16 +66,6 @@ function ApartmentList({ apartments }) {
                     />
                     <p id="not-available">Not Available</p>
                   </>
-                ) : (
-                  <img
-                    className="card-img-top "
-                    src={
-                      apartment.pictureURL
-                        ? `${apartment.pictureURL}`
-                        : placeholderImg
-                    }
-                    alt="Photo of Apartment"
-                  />
                 )}
 
                 <div className="card-body">
