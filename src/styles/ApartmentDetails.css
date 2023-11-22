@@ -72,3 +72,11 @@
 	text-decoration: none;
 }
 
+.bookAval{
+	padding: 10px;
+	font-size: medium;
+	background-color: rgb(136, 132, 132);
+	color: aliceblue;
+	border-radius:90px;
+	width: fit-content;
+}
