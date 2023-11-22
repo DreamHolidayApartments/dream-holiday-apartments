@@ -67,7 +67,8 @@ function ApartmentDetails({ fetchedData, setApartments }) {
                 <Card
                   style={{
                     width: "40rem",
-                    height: "30rem",
+                    minHeight : "30rem",
+                    height: "auto",
                     backgroundColor: "aliceblue",
                   }}
                 >
