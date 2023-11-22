@@ -58,24 +58,30 @@ function ApartmentDetails({ fetchedData, setApartments }) {
                 <Card.Body >
                   <Card.Title style={{ fontSize: "40px" }}>{apartmentDetails.title}</Card.Title>
                   <Card.Text className="cardText">
-                  {apartmentDetails.address}
+                    {apartmentDetails.address}
                   </Card.Text>
                   <hr/>
+                  {
+                    apartmentDetails.book === true 
+                    ? <Card.Title className = "bookAval">Booking is Available</Card.Title> 
+                    : <Card.Title className = "bookAval">Booking is Not Available</Card.Title>
+                  }
                   <Card.Text style={{ fontSize: "20px" , textAlign: "end"}} >
-                  &#9733;{apartmentDetails.rating}
+                    &#9733;{apartmentDetails.rating}
                   </Card.Text>
                   <Card.Title>Description</Card.Title>
                   <Card.Text>
-                  {apartmentDetails.description}
+                    {apartmentDetails.description}
                   </Card.Text>
                   <Card.Title>Guests</Card.Title>
                   <Card.Text>
-                  {apartmentDetails.numOfGuest} Beds
+                    {apartmentDetails.numOfGuest} Beds
                   </Card.Text>
                   <Card.Title>Price per Night</Card.Title>
                   <Card.Text>
-                  {apartmentDetails.pricePerNight} €
+                    {apartmentDetails.pricePerNight} €
                   </Card.Text>
+              
                   <Link className="cardBtn" to={`/apartment-list/${apartmentDetails.cityId}`}>Go Back</Link>
                  
                 </Card.Body>
