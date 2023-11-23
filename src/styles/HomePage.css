@@ -19,8 +19,8 @@
   text-align: center;
 }
 
-#inputGroupSelect01,
-#inputGroupSelect02 {
+#input-group-select-01,
+#input-group-select-02 {
   font-size: 2rem;
   color: antiquewhite;
   margin: 1.2rem;
@@ -31,18 +31,18 @@
   text-align: center;
 }
 
-#inputGroupSelect01 option {
+#input-group-select-01 option {
   background: rgba(0, 0, 0, 0.6);
   color: antiquewhite;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
 }
-#inputGroupSelect02 option {
+#input-group-select-02 option {
   background: rgba(0, 0, 0, 0.6);
   color: antiquewhite;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
 }
 
-#btnSubmit1 {
+#btn-submit1 {
   border: 2px solid antiquewhite;
   color: antiquewhite;
   font-size: 2rem;
@@ -61,7 +61,7 @@
     align-items: center;
   }
 
-  #btnSubmit1 {
+  #btn-submit1 {
     padding-bottom: 3rem;
   }
 }

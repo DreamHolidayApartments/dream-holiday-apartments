@@ -23,10 +23,10 @@ function HomePage({
   return (
     <div className="HomePage">
       <div className="select-container">
-        <label className="countryLabel">
+        <label>
           <select
             className="custom-select"
-            id="inputGroupSelect01"
+            id="input-group-select-01"
             onChange={handleSelectCountry}
           >
             <option>Select Country</option>
@@ -41,10 +41,10 @@ function HomePage({
           </select>
         </label>
 
-        <label className="cityLabel">
+        <label>
           <select
             className="custom-select"
-            id="inputGroupSelect02"
+            id="input-group-select-02"
             onChange={(e) => {
               setSelectedCity(e.target.value);
             }}
@@ -61,7 +61,7 @@ function HomePage({
           </select>
         </label>
         {selectedCity && (
-          <Link id="btnSubmit1" to={`/apartment-list/${selectedCity}`}>
+          <Link id="btn-submit1" to={`/apartment-list/${selectedCity}`}>
             Submit
           </Link>
         )}
