@@ -12,7 +12,7 @@ function ApartmentList({ apartments }) {
   const [displayFilter, setDisplayFilter] = useState(false);
 
   const filterApartments = (rating, price, guests) => {
-    const filteredApartmentsArr = apartments
+    const filteredApartmentsArr = apartmentsInCity
       .filter((apartment) => {
         return apartment.rating >= rating;
       })

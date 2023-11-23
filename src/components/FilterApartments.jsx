@@ -23,12 +23,13 @@ function FilterApartments({ filterApartments, maxPrice }) {
   return (
     <div id="FilterApartments">
       <Form onSubmit={handleSubmit}>
-        <Row>
+        <Row id = "row-filter">
           <Col>
             <Form.Group>
               <Form.Check
                 type="checkbox"
                 label="Minimun Rating"
+                className = "checkbox-filter"
                 id="rating-box"
                 onChange={() => setCheckedRating(true)}
               />
@@ -53,6 +54,7 @@ function FilterApartments({ filterApartments, maxPrice }) {
               <Form.Check
                 type="checkbox"
                 label="Maximum Price"
+                className = "checkbox-filter"
                 id="price-box"
                 onChange={() => setCheckedPrice(true)}
               />
@@ -76,6 +78,7 @@ function FilterApartments({ filterApartments, maxPrice }) {
               <Form.Check
                 type="checkbox"
                 label="Minimum Guests"
+                className = "checkbox-filter"
                 id="guest-box"
                 onChange={() => setCheckedGuests(true)}
               />
@@ -96,7 +99,7 @@ function FilterApartments({ filterApartments, maxPrice }) {
             </Form.Group>
           </Col>
           <Col>
-            <Button type="submit">Filter</Button>
+            <Button id="btn-filter" type="submit">Filter</Button>
           </Col>
         </Row>
       </Form>

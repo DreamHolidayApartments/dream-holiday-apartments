@@ -1,0 +1,41 @@
+#FilterApartments{
+    border: 2px solid black;
+    margin-left:  7.5rem;
+    width: 80rem;
+    height: auto;
+
+}
+
+#ApartmentList{
+    position: relative;
+}
+
+#row-filter{
+    border: 2px solid red;
+    padding: 2rem;
+    width: 70rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 0rem;
+}
+
+#btn-filter{
+    background-color: #e8b384;
+    color: black;
+    border: none;
+    width: 5rem;
+    box-shadow: 2px 2px 3px #999;
+}
+#btn-filter:hover {
+    cursor: pointer;
+    background-color: #d2a177;
+  }
+
+  .form-check-input {
+    background-color: white;
+    border: #d2a177
+ }
+ .form-check .form-check-input {
+    background-color: #d2a177;
+ }
+
