@@ -1,0 +1,11 @@
+#btn-contact{
+    background-color: #e8b384;
+    color: black;
+    border: none;
+    width: 100%;
+    box-shadow: 2px 2px 3px #999;
+}
+#btn-contact:hover {
+    cursor: pointer;
+    background-color: #d2a177;
+  }
