@@ -24,6 +24,11 @@
   color: #f4f2de;
 }
 
+.nav1 ul li a:hover {
+  text-decoration: none;
+  color: #363634;
+}
+
 .nav1 ul li {
   margin: 20px;
 }

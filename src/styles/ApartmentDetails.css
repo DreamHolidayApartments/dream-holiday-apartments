@@ -101,3 +101,9 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+.card-btn:hover,.edit-float:hover,.delete-float:hover {
+  cursor: pointer;
+  background-color: #d2a177;
+}
+
