@@ -1,7 +1,10 @@
-#ApartmentDetails {
-  margin: 2rem auto;
-  width: 90vw;
-  display: flex;
+#apartment-details-container {
+  width: 100rem;
+  margin: 0 auto;
+}
+
+#apartment-details {
+  margin: 40px 0;
 }
 
 #apartment-img {
@@ -10,73 +13,91 @@
   display: block;
 }
 
-.details-container {
-  width: 20vw;
-  display: block;
-  margin: 10px;
+.apartment-img {
+  width: 40rem;
+  height: 30rem;
 }
 
-.editFloat{
-  position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:130px;
-	background-color:#e8b384;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
-  border: none
+.column-style {
+  width: 40rem;
+  height: 30rem;
 }
 
-.deleteFloat{
-  position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#e8b384;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
-  	border: none
+.details-column {
+  background-color: aliceblue;
+  min-height: 30rem;
+  height: auto;
 }
 
-.cardText{
-	color: rgb(113, 111, 111);
-	height: 0vh;
+#card-title {
+  font-size: 2.5rem;
+}
+
+.edit-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 130px;
+  background-color: #e8b384;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  border: none;
+}
+
+.delete-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #e8b384;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  border: none;
+}
+
+.card-text {
+  color: rgb(113, 111, 111);
+  height: 0vh;
 }
 
 .card-body p {
-    margin-bottom: 0.5rem;
-    position: relative;
-    height: auto;
+  margin-bottom: 0.5rem;
+  position: relative;
+  height: auto;
+}
+.book-available {
+  padding: 10px;
+  font-size: medium;
+  background-color: rgb(136, 132, 132);
+  color: aliceblue;
+  border-radius: 90px;
+  width: fit-content;
+}
+
+#rating {
+  font-size: 20px;
+  text-align: end;
 }
 
 .col {
-	padding: 0;
+  padding: 0;
 }
 
-.cardBtn{
-	position:absolute;
-	right: 20px;
-	bottom:10px;
-	padding: 10px;
-	background-color: #e8b384;
-	border-radius:90px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
-	color: rgb(50, 50, 50);
-	width: 100px;
-	font-weight: 600;
-	text-decoration: none;
-}
-
-.bookAval{
-	padding: 10px;
-	font-size: medium;
-	background-color: rgb(136, 132, 132);
-	color: aliceblue;
-	border-radius:90px;
-	width: fit-content;
+.card-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  padding: 10px;
+  background-color: #e8b384;
+  border-radius: 90px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  color: rgb(50, 50, 50);
+  width: 100px;
+  font-weight: 600;
+  text-decoration: none;
 }

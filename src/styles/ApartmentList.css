@@ -63,14 +63,25 @@
 }
 
 #filter-btn {
-  background-color: #e8b384;
+  font-size: 1rem;
+  color: rgb(56, 55, 55);
+  background-color: #f4f2de;
+  padding: 0.3rem 0.3rem;
+  border-radius: 10%;
+  border: 1px solid rgb(56, 55, 55);
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px; */
+
   position: absolute;
   top: -8rem;
   right: 2rem;
-  border-radius: 15%;
-  padding: 0.1rem 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
+#filter-btn:hover {
+  cursor: pointer;
+  background-color: #e9e7d4;
+}
 .check-it-out {
   background-color: #e8b384;
   color: black;

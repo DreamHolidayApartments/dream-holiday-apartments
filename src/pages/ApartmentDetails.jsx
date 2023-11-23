@@ -45,51 +45,41 @@ function ApartmentDetails({ fetchedData, setApartments }) {
     <div>
       {apartmentDetails && (
         <>
-          <Container style={{ width: "100rem", margin: "0 auto" }}>
-            <Row style={{ margin: "40px 0" }}>
+          <Container id="apartment-details-container">
+            <Row id="apartment-details">
               <Col>
-                <Card style={{ width: "40rem", height: "30rem" }}>
+                <Card style={{}} className="column-style">
                   {apartmentDetails.pictureURL ? (
                     <Card.Img
-                      style={{ width: "40rem", height: "30rem" }}
+                      className="apartment-img"
                       src={apartmentDetails.pictureURL}
                     />
                   ) : (
-                    <Card.Img
-                      style={{ width: "40rem", height: "30rem" }}
-                      src={placeholderImg}
-                    />
+                    <Card.Img className="apartment-img" src={placeholderImg} />
                   )}
                 </Card>
               </Col>
 
               <Col>
-                <Card
-                  style={{
-                    width: "40rem",
-                    minHeight : "30rem",
-                    height: "auto",
-                    backgroundColor: "aliceblue",
-                  }}
-                >
+                <Card className="column-style details-column">
                   <Card.Body>
-                    <Card.Title style={{ fontSize: "40px" }}>
+                    <Card.Title id="card-title">
                       {apartmentDetails.title}
                     </Card.Title>
-                    <Card.Text className="cardText">
+                    <Card.Text className="card-text">
                       {apartmentDetails.address}
                     </Card.Text>
                     <hr />
                     {apartmentDetails.book === true ? (
-                      <Card.Title className="bookAval">
+                      <Card.Title className="book-available">
                         Booking is Available
                       </Card.Title>
                     ) : (
-                      <Card.Title className="bookAval">
+                      <Card.Title className="book-available">
                         Booking is Not Available
                       </Card.Title>
                     )}
-                    <Card.Text style={{ fontSize: "20px", textAlign: "end" }}>
+                    <Card.Text id="rating">
                       &#9733;{apartmentDetails.rating}
                     </Card.Text>
                     <Card.Title>Description</Card.Title>
@@ -100,7 +90,7 @@ function ApartmentDetails({ fetchedData, setApartments }) {
                     <Card.Text>{apartmentDetails.pricePerNight} €</Card.Text>
 
                     <Link
-                      className="cardBtn"
+                      className="card-btn"
                       to={`/apartment-list/${apartmentDetails.cityId}`}
                     >
                       Go Back
@@ -123,10 +113,10 @@ function ApartmentDetails({ fetchedData, setApartments }) {
         </>
       )}
 
-      <button className="editFloat" onClick={handleShow}>
+      <button className="edit-float" onClick={handleShow}>
         <img src={editSvg} />
       </button>
-      <button className="deleteFloat" onClick={handleShowDelete}>
+      <button className="delete-float" onClick={handleShowDelete}>
         <img src={deleteSvg} />
       </button>
 
