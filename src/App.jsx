@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ApartmentList from "./pages/ApartmentList";
 import Navbar from "./components/Navbar";
 import ApartmentDetails from "./pages/ApartmentDetails";
+import About from "./pages/About";
 import axios from "axios";
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
             />
           }
         />
+        <Route path="/About" element={<About />} />
       </Routes>
     </div>
   );
