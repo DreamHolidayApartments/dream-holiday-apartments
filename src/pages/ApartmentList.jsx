@@ -3,10 +3,15 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/ApartmentList.css";
 import placeholderImg from "../assets/placeholder-img.png";
 import funnel from "../assets/funnel.svg";
+import FilterApartments from "../components/FilterApartments";
+
 
 function ApartmentList({ apartments }) {
   const { cityId } = useParams();
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     if (apartments) {
@@ -20,11 +25,10 @@ function ApartmentList({ apartments }) {
   return (
     <div id="ApartmentList">
       <div className="filter">
-        <button id="filter-btn">
-         
+        <button id="filter-btn">        
          <img src={funnel}/>
-         
         </button>
+        <FilterApartments/>
       </div>
       <div className="list-container">
         {apartmentsInCity &&
