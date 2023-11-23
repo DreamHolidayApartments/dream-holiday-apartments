@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import ApartmentDetails from "./pages/ApartmentDetails";
 import About from "./pages/About";
 import axios from "axios";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   let url = import.meta.env.VITE_API_URL;
@@ -74,6 +75,7 @@ function App() {
           }
         />
         <Route path="/About" element={<About />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>
   );

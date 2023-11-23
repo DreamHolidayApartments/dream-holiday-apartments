@@ -1,9 +1,8 @@
 #FilterApartments{
-    border: 2px solid black;
+    border: 2px solid white;
     margin-left:  7.5rem;
     width: 80rem;
     height: auto;
-
 }
 
 #ApartmentList{
@@ -11,7 +10,7 @@
 }
 
 #row-filter{
-    border: 2px solid red;
+    border: 2px solid white;
     padding: 2rem;
     width: 70rem;
     margin: 0 auto;
