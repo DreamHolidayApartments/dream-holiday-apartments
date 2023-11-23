@@ -74,7 +74,7 @@ function App() {
             />
           }
         />
-        <Route path="/About" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>
