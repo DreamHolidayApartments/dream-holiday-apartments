@@ -77,6 +77,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: fixed;
+  top: 6rem;
+  right: 3rem;
 }
 #filter-btn:hover {
   cursor: pointer;

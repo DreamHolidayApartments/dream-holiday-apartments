@@ -5,17 +5,39 @@ import placeholderImg from "../assets/placeholder-img.png";
 import funnel from "../assets/funnel.svg";
 import FilterApartments from "../components/FilterApartments";
 
-
 function ApartmentList({ apartments }) {
   const { cityId } = useParams();
   const [apartmentsInCity, setApartmentsInCity] = useState(null);
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [maxPrice, setMaxPrice] = useState(null);
+  const [displayFilter, setDisplayFilter] = useState(false);
+
+  const filterApartments = (rating, price, guests) => {
+    const filteredApartmentsArr = apartments
+      .filter((apartment) => {
+        return apartment.rating >= rating;
+      })
+      .filter((apartment) => {
+        return apartment.pricePerNight <= price;
+      })
+      .filter((apartment) => {
+        return apartment.numOfGuest >= guests;
+      });
+    setApartmentsInCity(filteredApartmentsArr);
+  };
+
+  const calcMaxPrice = () => {
+    let maxPrice = 0;
+    apartments.map((apartment) => {
+      let price = apartment.pricePerNight;
+      maxPrice = Math.max(maxPrice, price);
+    });
+    setMaxPrice(maxPrice);
+  };
 
   useEffect(() => {
     if (apartments) {
       const newApartmentsArr = apartments.filter((apartment) => {
+        calcMaxPrice();
         return apartment.cityId == cityId;
       });
       setApartmentsInCity(newApartmentsArr.reverse());
@@ -25,10 +47,18 @@ function ApartmentList({ apartments }) {
   return (
     <div id="ApartmentList">
       <div className="filter">
-        <button id="filter-btn">        
-         <img src={funnel}/>
+        <button
+          id="filter-btn"
+          onClick={() => setDisplayFilter(!displayFilter)}
+        >
+          <img src={funnel} />
         </button>
-        <FilterApartments/>
+        {displayFilter && maxPrice && (
+          <FilterApartments
+            filterApartments={filterApartments}
+            maxPrice={maxPrice}
+          />
+        )}
       </div>
       <div className="list-container">
         {apartmentsInCity &&
@@ -69,7 +99,7 @@ function ApartmentList({ apartments }) {
                     <h6 className="card-title">{apartment.title}</h6>
                     <p> &#9733;{apartment.rating} </p>
                   </div>
-                  <p id="beds">&#183; {apartment.numOfGuest} guest &#183;</p>
+                  <p id="beds">&#183; {apartment.numOfGuest} Guest &#183;</p>
                   <p id="short-description">
                     {apartment.description.slice(
                       0,
