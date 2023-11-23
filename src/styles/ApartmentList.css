@@ -64,13 +64,13 @@
 
 #filter-btn {
   font-size: 1rem;
-  color: rgb(56, 55, 55);
-  background-color: #f4f2de;
+  color: #e9e7d4;
+  background-color: #e8b384;
   padding: 0.3rem 0.3rem;
-  border-radius: 10%;
-  border: 1px solid rgb(56, 55, 55);
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px; */
-
+  border-radius: 100%;
+  box-shadow: 2px 2px 3px #999;
+  border: none;
+  padding: 10px;
   position: absolute;
   top: -8rem;
   right: 2rem;
@@ -80,7 +80,7 @@
 }
 #filter-btn:hover {
   cursor: pointer;
-  background-color: #e9e7d4;
+  background-color: #d2a177;
 }
 .check-it-out {
   background-color: #e8b384;
