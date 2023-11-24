@@ -123,8 +123,6 @@ function ApartmentList({ apartments }) {
               </div>
             );
           })}
-
-        {apartmentsInCity.length === 0 && <h3>Sorry Nothing Available</h3>}
       </div>
     </div>
   );
