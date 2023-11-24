@@ -18,7 +18,7 @@
 - Filter Apartments by Rating, Price & Guest:
   - Implement filters for administrators to filter and view apartments based on criteria such as rating, price, and guest capacity.
 
-## Instructions to run this app in my computer
+## Instructions to run this app in your computer
 
 - how to install dependencies (`npm install`)
 - how to run the application (eg. `npm run dev`)
